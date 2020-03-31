@@ -28,7 +28,7 @@ describe("text NumberCard Component", () => {
         const wrapper = renderComponent();
         changeInputValue(wrapper, '99999')
         const numberText = findByAttribute(wrapper, 'number-text-display-id');
-        expect(numberText.text()).toBe('ninety nine thousand nine ninety nine')
+        expect(numberText.text()).toBe('ninety nine thousand nine hundred and ninety nine ')
     });
     it('should render overflow whem 100000 is entered', () => {
         const wrapper = renderComponent();
@@ -40,20 +40,27 @@ describe("text NumberCard Component", () => {
         const wrapper = renderComponent();
         changeInputValue(wrapper, '10')
         const numberText = findByAttribute(wrapper, 'number-text-display-id');
-        expect(numberText.text()).toBe('ten')
+        expect(numberText.text()).toBe('ten ')
     });
     it('should render seventeen when 17 is entered', () => {
         const wrapper = renderComponent();
         changeInputValue(wrapper, '17')
         const numberText = findByAttribute(wrapper, 'number-text-display-id');
-        expect(numberText.text()).toBe('seventeen')
+        expect(numberText.text()).toBe('seventeen ')
     });
 
     it('should render one hundren and twenty three when 123 is entered', () => {
         const wrapper = renderComponent();
         changeInputValue(wrapper, '123')
         const numberText = findByAttribute(wrapper, 'number-text-display-id');
-        expect(numberText.text()).toBe('one hundren and twenty three')
+        expect(numberText.text()).toBe('one hundred and twenty three ')
+    });
+
+    it('should render error when non number is entered', () => {
+        const wrapper = renderComponent();
+        changeInputValue(wrapper, '123sd')
+        const numberText = findByAttribute(wrapper, 'number-text-display-id');
+        expect(numberText.text()).toBe('error')
     });
 
 
