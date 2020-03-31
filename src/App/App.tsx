@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import NumberCard from '../NumberCard/NumberCard';
 
 function App() {
-  return (
-    <div className="App">
-      <NumberCard/>
-    </div>
-  );
+    return (
+        <div data-test-id='app-component-id' className="container d-flex h-100 justify-content-center align-items-center">
+            <NumberCard />
+        </div>
+    );
 }
 
 export default App;

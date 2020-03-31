@@ -4,10 +4,10 @@ import './index.css';
 import App from './App/App';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+{/*<React.StrictMode>*/ }
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    < App />,
   document.getElementById('root')
 );
 
